@@ -11,12 +11,24 @@ Rappel :
 */
 
 function findMedianSortedArrays(nums1, nums2) {
-  // TODO : écrire ton code ici
-}
 
-// --------------------
-// Tests (au moins 3)
-// --------------------
+  let fusion = nums1.concat(nums2);
+
+  let nombre = fusion.length;
+
+  if(nombre % 2 !== 0){
+    return fusion[Math.floor(nombre/2)];
+  }else{
+    let moyenneMilieu1 = fusion[nombre/ 2 - 1];
+    let moyenneMilieu2 = fusion[nombre/ 2];
+    return (moyenneMilieu1 + moyenneMilieu2) / 2;
+
+  }
+} 
+
+
+// Tests 
+
 console.log(findMedianSortedArrays([1, 3], [2])); // attendu: 2
 console.log(findMedianSortedArrays([1, 2], [3, 4])); // attendu: 2.5
 console.log(findMedianSortedArrays([], [1])); // attendu: 1 (cas limite)
