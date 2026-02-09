@@ -14,6 +14,16 @@ function findMedianSortedArrays(nums1, nums2) {
 
   let fusion = nums1.concat(nums2);
 
+  function sort(a,b){
+    return a - b;
+  }
+
+
+  fusion.sort();
+
+
+
+
   let nombre = fusion.length;
 
   if(nombre % 2 !== 0){
